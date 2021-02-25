@@ -68,9 +68,9 @@
     </div>
 
     <el-calendar v-model="value_date">
-      <div slot="dateCell" slot-scope="{ date }" >
-          <div>{{ getDay(date) }}</div>
-          
+      <div slot="dateCell" slot-scope="{ date }">
+        <div>{{ getDay(date) }}</div>
+
         <div class="schedule_box">
           <li
             class="schedule_cell"
@@ -81,9 +81,7 @@
           >
             {{ v.course_name }}
           </li>
-          
         </div>
-          
       </div>
     </el-calendar>
     <el-dialog
@@ -307,7 +305,12 @@ export default {
         "视觉传达设计",
         "环境科学",
         "通信工程"
-      ]
+      ].sort(function compareFunction(param1, param2) {
+        //console.log("param1",param2)
+        return param1.localeCompare(param2, "zh-Hans-CN", {
+          sensitivity: "accent"
+        });
+      })
     };
   },
   methods: {
