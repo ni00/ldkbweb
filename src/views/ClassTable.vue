@@ -324,14 +324,14 @@ export default {
         let classname =
           this.value_year + this.value_subject + this.value_class + "班";
         axios
-          .get(`//ldkb-1257334448.file.myqcloud.com/json/${classname}.json`)
+          .get(`//ldkb-1257334448.cos.ap-guangzhou.myqcloud.com/json/${classname}.json`)
           .then(function(response) {
             if (response.data == "404") {
               that.$message.error("服务器未检索到此班级，请确认输入是否正确！");
             } else {
               const elemIF = document.createElement("iframe");
               elemIF.src =
-                "https://ldkb-1257334448.file.myqcloud.com/ics/" +
+                "https://ldkb-1257334448.cos.ap-guangzhou.myqcloud.com/ics/" +
                 classname +
                 ".ics";
               elemIF.style.display = "none";
@@ -365,7 +365,7 @@ export default {
           this.value_class
         ]);
         axios
-          .get(`//ldkb-1257334448.file.myqcloud.com/json/${classname}.json`)
+          .get(`//ldkb-1257334448.cos.ap-guangzhou.myqcloud.com/json/${classname}.json`)
           .then(function(response) {
             if (response.data == "404") {
               that.$message.error("服务器未检索到此班级，请确认输入是否正确！");
