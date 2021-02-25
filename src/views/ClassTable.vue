@@ -490,7 +490,7 @@ export default {
   margin-left: 10px;
 }
 .schedule_cell {
-  font-size: 2px;
+  font-size: 12px;
   /* background: green; */
   color: #fffefe;
   display: block; /*内联对象需加*/
