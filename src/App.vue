@@ -3,7 +3,7 @@
     <div id="nav"
          class="no_print">
       <el-row>
-        <el-col :span="4">
+        <el-col :span="8">
           <router-link to="/">
             <div class="menu_li"
                  :class="{ activeClass: isActive == '/' }"
@@ -12,7 +12,7 @@
             </div>
           </router-link>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="8">
           <router-link to="/ClassTable">
             <div class="menu_li"
                  :class="{ activeClass: isActive == '/ClassTable' }"
@@ -21,7 +21,7 @@
             </div>
           </router-link>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="4" v-if="flase">
           <router-link to="/Person">
             <div class="menu_li"
                  :class="{ activeClass: isActive == '/Person' }"
@@ -30,7 +30,7 @@
             </div>
           </router-link>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="4"  v-if="flase">
           <router-link to="/Other">
             <div class="menu_li"
                  :class="{ activeClass: isActive == '/Other' }"
@@ -39,7 +39,7 @@
             </div>
           </router-link>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="4"  v-if="flase">
           <router-link to="/About">
             <div class="menu_li"
                  :class="{ activeClass: isActive == '/About' }"
@@ -48,7 +48,7 @@
             </div>
           </router-link>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="8">
           <el-popconfirm @confirm="openQQ()"
                          confirm-button-text="好的"
                          cancel-button-text="不用了"
@@ -84,7 +84,9 @@ export default {
       var flag = true
       for (var v = 0; v < Agents.length; v++) {
         if (userAgentInfo.indexOf(Agents[v]) > 0) {
-          flag = false
+          //flag = false
+          //全部当成PC
+          flag = true
           break
         }
       }
