@@ -10,9 +10,9 @@
         >安卓下载</el-button
       >
       <el-button type="warning" icon="el-icon-apple" disabled
-        >IOS下载</el-button
+        v-if="false">IOS下载</el-button
       >
-      <el-button type="danger" icon="el-icon-menu" disabled>小程序</el-button>
+      <el-button type="danger" icon="el-icon-menu" disabled v-if="false">小程序</el-button>
     </el-button-group>
     <div id="app_img_box">
       <div id="app_img">
